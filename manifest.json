@@ -1,0 +1,21 @@
+{
+  "name": "First extention for chrome",
+  "version": "1.0.0",
+  "description": "First extention for chrome",
+  "manifest_version": 3,
+  "author": "Edoardo Vincenzi",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "First extention for chrome"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permission": ["storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/*"],
+      "js": ["contents.js"]
+    }
+  ]
+}
