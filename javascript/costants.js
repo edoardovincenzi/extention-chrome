@@ -1,0 +1,4 @@
+const MARGIN_COLOR = '#AE8153';
+const BORDER_COLOR = '#E3C481';
+const PADDING_COLOR = '#B8C47F';
+const CONTENT_COLOR = '#8AB2BD';

@@ -1,0 +1,15 @@
+.pick_color {
+  width: auto;
+  max-width: 240px;
+  height: 55px;
+  bottom: 4px;
+  right: 4px;
+  background-color: rgba(30, 32, 44, 0.95);
+  color: white;
+  font-family: monospace;
+  position: fixed;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transform: translateY(-150px);
+  transform: translateX(150px);
+}

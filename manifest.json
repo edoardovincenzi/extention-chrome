@@ -8,11 +8,16 @@
     "default_popup": "index.html",
     "default_title": "Element info"
   },
-  "permission": ["storage", "activeTab", "scripting"],
+  "optional_permissions": ["storage", "activeTab"],
   "content_scripts": [
     {
       "matches": ["https://*.google.com/*"],
-      "js": ["contents.js"]
+      "js": [
+        "javascript/contents.js",
+        "javascript/element.js",
+        "javascript/costants.js"
+      ],
+      "css": ["style/global.css"]
     }
   ]
 }
