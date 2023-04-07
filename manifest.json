@@ -1,17 +1,14 @@
 {
-  "name": "First extention for chrome",
+  "name": "Element info",
   "version": "1.0.0",
-  "description": "First extention for chrome",
+  "description": "Give you some information about element in hover.",
   "manifest_version": 3,
   "author": "Edoardo Vincenzi",
   "action": {
     "default_popup": "index.html",
-    "default_title": "First extention for chrome"
+    "default_title": "Element info"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "permission": ["storage", "activeTab"],
+  "permission": ["storage", "activeTab", "scripting"],
   "content_scripts": [
     {
       "matches": ["https://*.google.com/*"],
