@@ -12,4 +12,39 @@
   border-radius: 6px;
   transform: translateY(-150px);
   transform: translateX(150px);
+  z-index: 999;
+}
+
+.summaryContainer {
+  position: fixed;
+  background-color: orange;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 8px;
+}
+
+.lineTop {
+  position: fixed;
+  display: relative;
+  border: 1px dotted orange;
+  top: 0px;
+  z-index: 999;
+}
+.lineLeft {
+  position: fixed;
+  display: relative;
+  border: 1px dotted orange;
+  left: 0px;
+  z-index: 999;
+}
+
+.labelLine {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: max-content;
+  padding: 5px;
+  background-color: orange;
+  color: white;
 }

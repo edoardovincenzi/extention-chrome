@@ -1,8 +1,8 @@
-let oldBackground = '';
+let oldBorder = '';
 document.addEventListener('mouseover', (event) => {
   const item = event.target;
-  oldBackground = item.style.backgroundColor;
-  // item.style.backgroundColor = 'rgba(255, 205, 5, 0.24)';
+  oldBorder = item.style.border;
+  item.style.border = '1px solid orange';
   const { top, left } = item.getBoundingClientRect();
   const topPagePx = `${top}px`;
   const leftPagePx = `${left}px`;
@@ -13,7 +13,7 @@ document.addEventListener('mouseover', (event) => {
 });
 
 document.addEventListener('mouseout', (event) => {
-  event.target.style.backgroundColor = oldBackground;
+  event.target.style.border = oldBorder;
 });
 
 const coordinatesTopToElement = (topPagePx, leftPagePx) => {

@@ -1,10 +1,6 @@
 const labelElement = (text) => {
   const paragraph = document.createElement('p');
-  setStyleToElement(paragraph, 'backgroundColor', 'red');
-  setStyleToElement(paragraph, 'position', 'absolute');
-  setStyleToElement(paragraph, 'bottom', '0px');
-  setStyleToElement(paragraph, 'left', '0px');
-  setStyleToElement(paragraph, 'width', 'max-content');
+  paragraph.classList.add('labelLine');
   paragraph.textContent = text;
   return paragraph;
 };
@@ -13,11 +9,7 @@ const lineLeftElement = (top, left) => {
   let lineLeft = document.getElementById('coordinate-left');
   if (!lineLeft) {
     lineLeft = document.createElement('div');
-    setStyleToElement(lineLeft, 'position', 'fixed');
-    setStyleToElement(lineLeft, 'display', 'relative');
-    setStyleToElement(lineLeft, 'left', '0px');
-    setStyleToElement(lineLeft, 'border', '1px dotted red');
-    setStyleToElement(lineLeft, 'zIndex', 999);
+    lineLeft.classList.add('lineLeft');
     lineLeft.id = 'coordinate-left';
   }
   setStyleToElement(lineLeft, 'width', left);
@@ -29,11 +21,7 @@ const lineTopElement = (top, left) => {
   let lineTop = document.getElementById('coordinate-top');
   if (!lineTop) {
     lineTop = document.createElement('div');
-    setStyleToElement(lineTop, 'position', 'fixed');
-    setStyleToElement(lineTop, 'display', 'relative');
-    setStyleToElement(lineTop, 'border', '1px dotted red');
-    setStyleToElement(lineTop, 'top', '0px');
-    setStyleToElement(lineTop, 'zIndex', 999);
+    lineTop.classList.add('lineTop');
     lineTop.id = 'coordinate-top';
   }
   setStyleToElement(lineTop, 'height', top);
@@ -44,11 +32,7 @@ const lineTopElement = (top, left) => {
 const createSummaryElement = () => {
   if (!document.getElementById('summary-container')) {
     const summaryContainer = document.createElement('div');
-    setStyleToElement(summaryContainer, 'position', 'fixed');
-    setStyleToElement(summaryContainer, 'backgroundColor', 'orange');
-    setStyleToElement(summaryContainer, 'bottom', '20px');
-    setStyleToElement(summaryContainer, 'right', '20px');
-    setStyleToElement(summaryContainer, 'zIndex', 999);
+    summaryContainer.classList.add('summaryContainer');
     summaryContainer.id = 'summary-container';
     summaryContainer.textContent = 'item.left ';
     document.body.appendChild(summaryContainer);
@@ -61,10 +45,10 @@ const createPickColor = (top, left, item) => {
     pickColor = document.createElement('div');
     pickColor.classList.add('pick_color');
     pickColor.id = 'pick-color';
-    const style = getComputedStyle(item);
-    pickColor.textContent = `color: ${style.color} </br> backgroundColor: ${style.backgroundColor}`;
     document.body.appendChild(pickColor);
   }
+  const style = getComputedStyle(item);
+  pickColor.textContent = `color: ${style.color} </br> backgroundColor: ${style.backgroundColor}`;
   setStyleToElement(pickColor, 'top', top);
   setStyleToElement(pickColor, 'left', left);
 };
